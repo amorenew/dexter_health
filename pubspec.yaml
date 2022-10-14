@@ -18,7 +18,8 @@ dependencies:
   equatable: ^2.0.3
   cloud_firestore: ^3.5.1
   intl: ^0.17.0
-
+  desktop_webview_auth: ^0.0.9
+  
   flutter:
     sdk: flutter
 
