@@ -91,8 +91,7 @@ class _HomePageState extends State<HomePage> {
                         const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
                     backgroundColor: Colors.deepPurple,
                   ),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   child: const Text('Add'),
                 ),
                 const SizedBox(height: 50),

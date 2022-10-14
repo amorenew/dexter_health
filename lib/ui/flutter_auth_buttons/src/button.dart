@@ -11,7 +11,8 @@ class StretchableButton extends StatelessWidget {
   final List<Widget> children;
   final bool centered;
 
-  const StretchableButton({super.key, 
+  const StretchableButton({
+    super.key,
     required this.buttonColor,
     required this.borderRadius,
     required this.children,

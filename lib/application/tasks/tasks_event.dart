@@ -20,7 +20,9 @@ class AddHabitTaskEvent extends TaskEvent {
 class ListTasksEvent extends TaskEvent {
   final String userId;
 
-  ListTasksEvent({required this.userId,});
+  ListTasksEvent({
+    required this.userId,
+  });
 
   @override
   List<Object?> get props => [userId];

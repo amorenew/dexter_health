@@ -14,8 +14,7 @@ final CollectionReference _actionsCollection = _firestore.collection('actions');
 //final CollectionReference _usersCollection = _firestore.collection('users');
 
 class Database {
-
-    static Future<QuerySnapshot> getTasks({
+  static Future<QuerySnapshot> getTasks({
     required String userId,
   }) async {
     return _tasksCollection
@@ -56,7 +55,7 @@ class Database {
         .get();
   }
 
- /*  static Future<bool> addActivity({
+  /*  static Future<bool> addActivity({
     required Activity activity,
     required String userId,
   }) async {
