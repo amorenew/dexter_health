@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +20,7 @@ class AuthScreenBuilder extends StatelessWidget {
         stream: Provider.of<FirebaseAuthService>(context, listen: false)
             .onAuthStateChanged,
         builder: (ctx, userSnapshot) {
-          print(':::USER STREAM:::');
+          log(':::USER STREAM:::');
           if (userSnapshot.data != null) {
             /*return MultiProvider(
               providers: [

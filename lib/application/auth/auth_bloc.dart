@@ -1,10 +1,12 @@
-import 'package:bloc/bloc.dart';
-import 'package:desktop_webview_auth/desktop_webview_auth.dart';
-import 'package:desktop_webview_auth/google.dart';
-import 'package:dexter_health/firebase_options.dart';
+import 'dart:developer';
+
+//import 'package:desktop_webview_auth/desktop_webview_auth.dart';
+//import 'package:desktop_webview_auth/google.dart';
+//import 'package:dexter_health/firebase_options.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:dexter_health/services/firebase_auth_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -14,15 +16,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     FirebaseAuthService().onAuthStateChanged.listen(
       (user) async* {
         if (user != null) {
-          print('${user.email}');
+          log('${user.email}');
         }
       },
     );
-    print('event AuthBloc');
+    log('event AuthBloc');
 
     on<AuthCheckStatusEvent>(
       (event, emit) async {
-        print('event AuthCheckStatusEvent');
+        log('event AuthCheckStatusEvent');
 
         final User? user = await FirebaseAuthService().currentUser();
         if (user != null) {
@@ -35,7 +37,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     on<AuthGoogleLoginEvent>(
       (event, emit) async {
-        print('event AuthGoogleLoginEvent');
+        log('event AuthGoogleLoginEvent');
 
         User? user;
         user = await FirebaseAuthService().signInWithGoogle();
@@ -72,7 +74,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     on<AuthLogoutEvent>(
       (event, emit) async {
-        print('event AuthLogoutEvent');
+        log('event AuthLogoutEvent');
 
         await FirebaseAuthService().signOut();
         emit(const AuthLoggedOutState());
@@ -82,8 +84,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   //@override
   //Stream<AuthState> mapEventToState(AuthEvent event) {
-  // print('mapEventToState');
-  //  print(event.runtimeType);
+  // log('mapEventToState');
+  //  log(event.runtimeType);
   //  return super.mapEventToState(event);
   // }
 }

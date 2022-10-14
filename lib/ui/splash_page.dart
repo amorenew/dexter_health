@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dexter_health/application/auth/auth_bloc.dart';
@@ -18,13 +20,13 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     context.read<AuthBloc>().add(AuthCheckStatusEvent());
-    print('event');
+    log('event');
 
     return Scaffold(
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
-          print('state.runtimeType');
-          print(state.runtimeType);
+          log('state.runtimeType');
+          log(state.runtimeType.toString());
           if (state is AuthLoggedOutState || state is AuthFailedState) {
             Navigator.of(context).pushReplacementNamed('/login');
           }

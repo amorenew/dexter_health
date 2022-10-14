@@ -1,8 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:dexter_health/database.dart';
 import 'package:dexter_health/models/activity.dart';
 import 'package:dexter_health/models/habit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'activity_event.dart';
 part 'activity_state.dart';

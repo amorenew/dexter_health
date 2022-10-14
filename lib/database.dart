@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dexter_health/models/action.dart';
 import 'package:dexter_health/models/activity.dart';
@@ -20,17 +22,17 @@ class Database {
 
     return await _habitCollection.add(habit.toMap(userId: userId)).then(
       (value) {
-        print("Habit item added to the database");
+        log("Habit item added to the database");
         return true;
       },
       onError: (e) {
-        print("onError");
-        print(e);
+        log("onError");
+        log(e);
         return false;
       },
     ).catchError((e) {
-      print("catchError");
-      print(e);
+      log("catchError");
+      log(e);
     });
   }
 
@@ -52,17 +54,17 @@ class Database {
 
     return await _activityCollection.add(activity.toMap()).then(
       (value) {
-        print("Activity item added to the database");
+        log("Activity item added to the database");
         return true;
       },
       onError: (e) {
-        print("onError");
-        print(e);
+        log("onError");
+        log(e);
         return false;
       },
     ).catchError((e) {
-      print("catchError");
-      print(e);
+      log("catchError");
+      log(e);
     });
   }
 
@@ -83,17 +85,17 @@ class Database {
   }) async {
     return await _actionsCollection.add(action.toMap()).then(
       (value) {
-        print("Action item added to the database");
+        log("Action item added to the database");
         return true;
       },
       onError: (e) {
-        print("onError");
-        print(e);
+        log("onError");
+        log(e);
         return false;
       },
     ).catchError((e) {
-      print("catchError");
-      print(e);
+      log("catchError");
+      log(e);
     });
   }
 

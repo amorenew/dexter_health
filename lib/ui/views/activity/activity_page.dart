@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dexter_health/context_extension.dart';
 import 'package:dexter_health/models/action.dart';
 import 'package:dexter_health/models/activity.dart';
+import 'dart:developer';
 
 class ActivityPage extends StatefulWidget {
   const ActivityPage({Key? key}) : super(key: key);
@@ -152,16 +153,16 @@ class _ActionChartState extends State<ActionChart> {
   void initState() {
     super.initState();
     for (var action in widget.actions) {
-      print('Action ${action.createdAtDate.day}');
+      log('Action ${action.createdAtDate.day}');
     }
     widget.actions.sort(
       (a, b) => a.createdAtDate.day.compareTo(
         b.createdAtDate.day,
       ),
     );
-    print('==================');
+    log('==================');
     for (var action in widget.actions) {
-      print('Action ${action.createdAtDate.day}');
+      log('Action ${action.createdAtDate.day}');
     }
 
     maxYBar = widget.actions

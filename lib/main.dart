@@ -25,10 +25,10 @@ Future<void> main() async {
 
   Bloc.observer = AppBlocObserver();
   await runZonedGuarded(
-    () async => runApp(MyApp()),
+    () async => runApp(const MyApp()),
     (error, stackTrace) {
       log(error.toString(), stackTrace: stackTrace);
-      print(error.toString());
+      log(error.toString());
     },
   );
 }
