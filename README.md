@@ -17,6 +17,8 @@ To run on web use the following command
 
 `flutter run -d chrome --web-hostname localhost --web-port 5000`
 
+or use the following link (Be careful you should enable cookies from the address bar)
+https://dexter-health.web.app/
 
 Sample:
 
