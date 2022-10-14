@@ -20,4 +20,4 @@ or use the following link
 https://dexter-health.web.app/
 
 Sample:
-<img src="[relative/...](https://github.com/amorenew/dexter_health/blob/main/sample.png?raw=true)" width="400px" />
+<img src="https://github.com/amorenew/dexter_health/blob/main/sample.png?raw=true" width="400px" />
