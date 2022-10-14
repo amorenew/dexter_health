@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
         listener: (context, state) async {
           log('state.runtimeType');
           log(state.runtimeType.toString());
-          await Future.delayed(const Duration(seconds: 3));
+          await Future.delayed(const Duration(seconds: 5));
           if (state is AuthLoggedOutState || state is AuthFailedState) {
             Navigator.of(context).pushReplacementNamed('/login');
           }

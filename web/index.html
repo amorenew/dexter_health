@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -26,10 +27,13 @@
   <meta name="apple-mobile-web-app-title" content="dexter_health">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <meta name="google-signin-client_id"
+    content="10389515436-bih06k32vupuen5f3crpk8tbjq8odf8e.apps.googleusercontent.com">
 
-  <title>dexter_health</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>Dexter Health</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -39,20 +43,46 @@
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
+
 <body>
+  <!-- The core Firebase JS SDK (always required for using any Firebase service) -->
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js"></script>
+  <!-- Firebase Auth SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-remote-config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js"></script>
+
   <script>
-    window.addEventListener('load', function(ev) {
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBiyl1FClwxNA-eUHdvITnN7L3KIXa4iug",
+      authDomain: "dexter-health.firebaseapp.com",
+      projectId: "dexter-health",
+      storageBucket: "dexter-health.appspot.com",
+      messagingSenderId: "10389515436",
+      appId: "1:10389515436:web:e668064efa2907f0740309"
+    };
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    //const analytics = firebase.getAnalytics(app);
+  </script>
+  <!-- END OF FIREBASE INIT CODE -->
+
+  <script>
+    window.addEventListener('load', function (ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         }
-      }).then(function(engineInitializer) {
+      }).then(function (engineInitializer) {
         return engineInitializer.initializeEngine();
-      }).then(function(appRunner) {
+      }).then(function (appRunner) {
         return appRunner.runApp();
       });
     });
   </script>
 </body>
+
 </html>
