@@ -2,10 +2,11 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dexter_health/models/action.dart';
-import 'package:dexter_health/models/activity.dart';
+import 'package:dexter_health/models/task.dart';
 import 'package:dexter_health/models/habit.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+final CollectionReference _tasksCollection = _firestore.collection('tasks');
 final CollectionReference _habitCollection = _firestore.collection('habits');
 final CollectionReference _activityCollection =
     _firestore.collection('activites');
@@ -13,6 +14,16 @@ final CollectionReference _actionsCollection = _firestore.collection('actions');
 //final CollectionReference _usersCollection = _firestore.collection('users');
 
 class Database {
+
+    static Future<QuerySnapshot> getTasks({
+    required String userId,
+  }) async {
+    return _tasksCollection
+        //.where('userId', isEqualTo: userId)
+        //.orderBy('createdAt')
+        .get();
+  }
+
   static Future<bool> addHabit({
     required Habit habit,
     required String userId,
@@ -45,7 +56,7 @@ class Database {
         .get();
   }
 
-  static Future<bool> addActivity({
+ /*  static Future<bool> addActivity({
     required Activity activity,
     required String userId,
   }) async {
@@ -66,7 +77,7 @@ class Database {
       log("catchError");
       log(e);
     });
-  }
+  } */
 
   static Future<QuerySnapshot> getActivities({
     required String userId,
