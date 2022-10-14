@@ -4,5 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
-To run on Android go to android folder and generate sha then add it to firebase console
+To run on Android go to android folder and generate SHA1 then add it to firebase console
+command to generate SHA
 ./gradlew signingReport
+
+Figma design link:
+https://www.figma.com/file/PIhJ6qryh7AwZDO63d2rx0/Dexter-Health?node-id=8%3A203
+
