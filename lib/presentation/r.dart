@@ -7,6 +7,8 @@ class MainAssets {
 
   static const images_dexter_device = 'assets/images/dexter_device.png';
 
+  static const images_gradient_background = 'assets/images/gradient_background.png';
+
   static const images_google_logo = 'assets/images/google_logo.png';
 
   static const images_hospital_clinic = 'assets/images/hospital_clinic.jpeg';

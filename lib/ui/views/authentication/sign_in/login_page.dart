@@ -1,3 +1,4 @@
+import 'package:dexter_health/presentation/r.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -16,8 +17,16 @@ class LoginPage extends StatelessWidget {
     return ChangeNotifierProvider<SignInViewModel>(
       create: (_) => SignInViewModel(context.read),
       builder: (_, child) {
-        return const Scaffold(
-          body: SignInViewBody._(),
+        return Scaffold(
+          body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(MainAssets.images_hospital_clinic),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: const SignInViewBody._(),
+          ),
         );
       },
     );
@@ -34,13 +43,22 @@ class SignInViewBody extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
+          Image.asset(
+            MainAssets.images_dexter_logo,
+            width: MediaQuery.of(context).size.width * .5,
+            fit: BoxFit.fitWidth,
+          ),
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.only(top: 50, bottom: 10),
             child: Text(
-              Strings.signInMessage,
-              style: Theme.of(context).textTheme.headline4,
+              'Login by your google account',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(color: Colors.purple),
             ),
           ),
           BlocListener<AuthBloc, AuthState>(
@@ -49,9 +67,7 @@ class SignInViewBody extends StatelessWidget {
                 Navigator.of(context).pushReplacementNamed('/home');
               }
             },
-            child: Expanded(
-              child: isLoading ? _loadingIndicator() : _signInButtons(context),
-            ),
+            child: isLoading ? _loadingIndicator() : _signInButtons(context),
           ),
         ],
       ),
@@ -67,10 +83,10 @@ class SignInViewBody extends StatelessWidget {
   Column _signInButtons(BuildContext context) {
     return Column(
       children: const <Widget>[
-        Spacer(),
-        AnonymousSignInButton(),
+        //Spacer(),
+        //AnonymousSignInButton(),
         GoogleSignInButton(),
-        Spacer(),
+        //Spacer(),
       ],
     );
   }

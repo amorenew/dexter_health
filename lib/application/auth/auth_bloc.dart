@@ -14,6 +14,7 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(const AuthInitialState()) {
     FirebaseAuthService().onAuthStateChanged.listen(
+      // ignore: void_checks
       (user) async* {
         if (user != null) {
           log('${user.email}');

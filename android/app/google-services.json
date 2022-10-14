@@ -29,6 +29,13 @@
             {
               "client_id": "10389515436-bih06k32vupuen5f3crpk8tbjq8odf8e.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "10389515436-s1aqkaegecuj1pgaluhv0etpgjm36ckd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dexterHealth"
+              }
             }
           ]
         }

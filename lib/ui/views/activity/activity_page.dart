@@ -147,7 +147,6 @@ class _ActionChartState extends State<ActionChart> {
   final double width = 7;
 
   int touchedGroupIndex = -1;
-  late final maxYBar;
 
   @override
   void initState() {
@@ -164,16 +163,6 @@ class _ActionChartState extends State<ActionChart> {
     for (var action in widget.actions) {
       log('Action ${action.createdAtDate.day}');
     }
-
-    maxYBar = widget.actions
-            .reduce(
-              (currentAction, nextAction) =>
-                  currentAction.doubleValue() > nextAction.doubleValue()
-                      ? currentAction
-                      : nextAction,
-            )
-            .doubleValue() *
-        1.2;
   }
 
   @override
