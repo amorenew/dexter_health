@@ -15,9 +15,8 @@ Each task should have a duration of start and end to define its shift then if ti
 
 To run on web use the following command
 
-flutter run -d chrome --web-hostname localhost --web-port 5000
-or use the following link
-https://dexter-health.web.app/
+`flutter run -d chrome --web-hostname localhost --web-port 5000`
+
 
 Sample:
 
