@@ -66,7 +66,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '10389515436',
     projectId: 'dexter-health',
     storageBucket: 'dexter-health.appspot.com',
-    iosClientId: '10389515436-s1aqkaegecuj1pgaluhv0etpgjm36ckd.apps.googleusercontent.com',
+    iosClientId:
+        '10389515436-s1aqkaegecuj1pgaluhv0etpgjm36ckd.apps.googleusercontent.com',
     iosBundleId: 'com.example.dexterHealth',
   );
 
@@ -76,7 +77,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '10389515436',
     projectId: 'dexter-health',
     storageBucket: 'dexter-health.appspot.com',
-    iosClientId: '10389515436-s1aqkaegecuj1pgaluhv0etpgjm36ckd.apps.googleusercontent.com',
+    iosClientId:
+        '10389515436-s1aqkaegecuj1pgaluhv0etpgjm36ckd.apps.googleusercontent.com',
     iosBundleId: 'com.example.dexterHealth',
   );
 }
