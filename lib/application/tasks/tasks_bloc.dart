@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:dexter_health/database.dart';
 import 'package:dexter_health/models/task.dart';
-import 'package:dexter_health/models/habit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'tasks_event.dart';
@@ -16,7 +15,6 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
       );
       if (isAdded) {
         emit(TaskAddedState(event.task));
-        add(ListHabitActivitiesEvent(userId: event.userId, habit: event.habit));
       } */
     });
 

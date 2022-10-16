@@ -1,12 +1,10 @@
+import 'package:dexter_health/application/tasks/tasks_bloc.dart';
+import 'package:dexter_health/presentation/pages/splash_page.dart';
+import 'package:dexter_health/presentation/pages/authentication/sign_in/login_page.dart';
+import 'package:dexter_health/presentation/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dexter_health/application/auth/auth_bloc.dart';
-import 'package:dexter_health/application/habit/habit_bloc.dart';
-import 'package:dexter_health/ui/splash_page.dart';
-import 'package:dexter_health/ui/views/authentication/sign_in/login_page.dart';
-import 'package:dexter_health/ui/views/home/home_page.dart';
-
-import 'application/tasks/tasks_bloc.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,12 +21,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<TaskBloc>(
           create: (_) => TaskBloc(),
         ),
-        BlocProvider<HabitBloc>(
-          create: (_) => HabitBloc(),
-        ),
       ],
       child: MaterialApp(
-        title: 'Tinnl',
+        title: 'Dexter Health',
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
           fontFamily: 'Poppins',

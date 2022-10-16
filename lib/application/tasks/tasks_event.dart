@@ -4,17 +4,15 @@ abstract class TaskEvent extends Equatable {}
 
 class AddHabitTaskEvent extends TaskEvent {
   final String userId;
-  final Habit habit;
   final Task task;
 
   AddHabitTaskEvent({
     required this.userId,
-    required this.habit,
     required this.task,
   });
 
   @override
-  List<Object?> get props => [userId, habit, task];
+  List<Object?> get props => [userId, task];
 }
 
 class ListTasksEvent extends TaskEvent {
