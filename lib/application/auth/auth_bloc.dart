@@ -37,8 +37,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (event, emit) async {
         log('event AuthGoogleLoginEvent');
 
-        User? user;
-        user = await FirebaseAuthService().signInWithGoogle();
+        User? user = await FirebaseAuthService().signInWithGoogle();
 
         if (user != null) {
           emit(AuthLoggedInState(user: user));
